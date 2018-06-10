@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>TxSuite - Guides</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/scrolling-nav.css" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">TxSuite</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="disclaimer.html">Disclaimer</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" href="https://www.trionictuning.com/forum/index.php">Forum</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="guides.html">Guides</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="downloads.html">Downloads</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="bg-primary text-white">
+      <div class="container text-center">
+        <h1>Guides</h1>
+      </div>
+    </header>
+
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Trionic CAN Flasher</h2>
+            <p>
+              This is a quick guide to help you get started with the Trionic CAN Flasher.<br>
+              It should run on basically any Windows based computer and has successfully been tested with Windows XP, Windows 7, Windows 8.1 and Windows 10.<br><br>
+
+              The first step is to download the latest version of the Trionic CAN Flasher.<br>
+              You can do that from the download page.<br>
+              When downloaded, you should have the TrionicCANFlash.msi and Setup.exe files.<br>
+              Run the Setup.exe to install Trionic CAN Flasher.<br>
+              Setup.exe is a bootstrap file that will check for and download required frameworks from Microsoft.<br><br>
+
+              When you have downloaded the Trionic CAN Flasher you install it by double-clicking on the downloaded file.<br>
+              This will start the installation wizard and it’s recommended to use the default settings. When the installation is complete, you should see the following screen:<br><br>
+              <img src="assets/img/can_install.png" alt="Trionic CAN Flasher Install" />
+              <br><br>
+              The next step is to install the device you use to connect your computer to your car. There are multiple options, but this guide will focus on the ELM327 based alternative.<br>
+              It’s not the best, but the usually the cheapest. A decent ELM327 device is the ODBLink SX USB.<br>
+              Please note that the Trionic CAN Flasher does not work with Bluetooth or WiFi devices, but requires a cable connection.<br><br>
+
+              When you have connected the device to your PC’s and drivers has been installed, it’s important to set the latency to 2ms.<br>
+              Start the windows device manager, find the serial port (e.g. COM7) under Ports.<br>
+              Right click and select settings. Select tab port settings and click Advanced… button.<br>
+              Here you find latency. Set it to 2 ms. <br><br>
+
+              Now you can start the Trionic CAN Flasher, it will look something like this:<br><br>
+              <img src="assets/img/canflasher.png" alt="Trionic CAN Flasher" />
+              <br><br>
+              Next is to select your ECU type, Adapter type, Adapter and COM speed.<br>
+              In this example we select Trionic 8, ELM327 v1.3 or higher, COM7 and set Com speed to 23040.<br><br>
+
+              If your cable is also connected to your car’s ODB port, you should now have contact.<br>
+              Put your key in Off position and it is highly recommended to have an external charger connected and that you do not touch anything during this process.<br>
+              We want to minimize signaling on the bus, which may disturb the process.<br><br>
+
+              Try now by pressing Get ECU Info.<br>
+              You should now see logs that indicate that the ECU is being read, and when done a new window will pop up with some information about your car and your software.<br><br>
+
+              If all this went well, it’s time to read the software.<br>
+              The process is:
+              <ol>
+              <li>Have your key in On position.</li>
+              <li>Initiate action (Read ECU / Write ECU).</li>
+              <li>When you see message Starting bootloader then you turn key to Off position.</li>
+            </ol>
+            <br>
+            When you have clicked Read ECU, select a filename and watch the log window.<br>
+            This should take around 10 minutes and the result is that you have downloaded you software.<br><br>
+
+            Next is to take it to T8Suite, do your changes and write it back to the car.<br>
+            Which is done by clicking Flash ECU. A flash takes around 15 minutes.<br>
+            If something goes wrong during flashing, don’t panic.<br>
+            Just try to Recover ECU and re-install your original software.<br>
+            You might have to shut down and disconnect everything, but it is not likely anything is broken.<br>
+            Only that you do not have any software in your ECU.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">&copy; TxSuite - All rights reserved.</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="assets/js/scrolling-nav.js"></script>
+
+  </body>
+
+</html>
